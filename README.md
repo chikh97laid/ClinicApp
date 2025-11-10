@@ -46,9 +46,11 @@ Follow these steps to set up and run the project on your local machine:
 1️⃣ **Clone the project:**  
 
 git clone https://github.com/chikh97laid/ClinicApp.git
+
 2️⃣ Navigate to the project folder:
 نسخ الكود
 cd ClinicApp
+
 3️⃣ Create or update appsettings.json:
 
 Copy from appsettings.example.json
@@ -58,6 +60,7 @@ Set your database connection string and JWT key.
 4️⃣ Apply database migrations:
 نسخ الكود
 dotnet ef database update
+
 5️⃣ Run the API:
 نسخ الكود
 dotnet run
