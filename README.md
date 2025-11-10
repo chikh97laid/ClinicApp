@@ -62,3 +62,8 @@ dotnet ef database update
 
 5️⃣ Run the API:
 dotnet run
+
+Chikh Oulad Laid Backend Developer — ASP.NET Core 
+[LinkedIn](www.linkedin.com/in/chikhouladlaid) 
+|
+[GitHub](https://github.com/chikh97laid)
