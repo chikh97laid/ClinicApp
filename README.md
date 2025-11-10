@@ -41,30 +41,23 @@ A comprehensive clinic management RESTful API built with **ASP.NET Core 8** and 
 
 ## How to Run Locally
 
-1. Clone the project:  
-```bash
-git clone https://github.com/chikh97laid/ClinicApp.git
-Navigate to the project folder:
+Follow these steps to set up and run the project on your local machine:
 
-bash
+1️⃣ **Clone the project:**  
+
+git clone https://github.com/chikh97laid/ClinicApp.git
+2️⃣ Navigate to the project folder:
 نسخ الكود
 cd ClinicApp
-Create or update appsettings.json from appsettings.example.json and set your connection string and JWT key.
+3️⃣ Create or update appsettings.json:
 
-Apply database migrations:
+Copy from appsettings.example.json
 
-bash
+Set your database connection string and JWT key.
+
+4️⃣ Apply database migrations:
 نسخ الكود
 dotnet ef database update
-Run the API:
-
-bash
+5️⃣ Run the API:
 نسخ الكود
 dotnet run
-Contact
-Chikh Oulad Laid — Backend Developer — ASP.NET Core
-LinkedIn | GitHub
-
-yaml
-نسخ الكود
-
