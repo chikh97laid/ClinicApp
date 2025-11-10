@@ -1,0 +1,2448 @@
+{
+	"info": {
+		"_postman_id": "46887485-4675-4d86-8bd2-533c3bc1b55f",
+		"name": "ClinicApp Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47263177"
+	},
+	"item": [
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "RegisterPatients",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"string\",\r\n  \"password\": \"string\",\r\n  \"email\": \"user@example.com\",\r\n  \"phoneNumber\": \"string\",\r\n  \"person\": {\r\n    \"firstName\": \"string\",\r\n    \"lastName\": \"string\",\r\n    \"dateOfBirth\": \"2025-11-09T21:35:49.559Z\",\r\n    \"gender\": 0,\r\n    \"address\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Accounts/patients/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Accounts",
+								"patients",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userNameOrEmail\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Accounts/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Accounts",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Accounts/profile",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Accounts",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/Accounts/confirm-email?userId=<userId>&token=<token>\n\nHeaders:",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Accounts",
+								"confirm-email"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "<userId>"
+								},
+								{
+									"key": "token",
+									"value": "<token>\n\nHeaders:"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend Email Confirmation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/Accounts/resend-confirmation?email=<email>",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Accounts",
+								"resend-confirmation"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "<email>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Accounts/forgot-password",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Accounts",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"string\",\r\n  \"token\": \"string\",\r\n  \"newPassword\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Accounts/reset-password",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Accounts",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"accessToken\": \"string\",\r\n  \"refreshToken\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Accounts/refresh-token",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Accounts",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AdminAccounts",
+			"item": [
+				{
+					"name": "Admin Get All Accounts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Authorization: <token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/admin/accounts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Admin Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Authorization: <token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"string\",\r\n  \"password\": \"string\",\r\n  \"email\": \"user@example.com\",\r\n  \"phoneNumber\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/admin/accounts/admins",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"accounts",
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Doctor Account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Authorization: <token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"string\",\r\n  \"password\": \"string\",\r\n  \"email\": \"user@example.com\",\r\n  \"phoneNumber\": \"string\",\r\n  \"person\": {\r\n    \"firstName\": \"string\",\r\n    \"lastName\": \"string\",\r\n    \"dateOfBirth\": \"2025-11-09T22:50:57.091Z\",\r\n    \"gender\": 0,\r\n    \"address\": \"string\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/admin/accounts/doctors",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"accounts",
+								"doctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Account Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/admin/accounts/{id}/toggle-status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"accounts",
+								"{id}",
+								"toggle-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Account",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/admin/accounts/{id}?Authorization=<token>",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"admin",
+								"accounts",
+								"{id}"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "<token>"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctors",
+			"item": [
+				{
+					"name": "Get Doctors",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create Doctor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"dateOfBirth\": \"2025-11-09T23:17:33.474Z\",\r\n  \"gender\": 0,\r\n  \"email\": \"user@example.com\",\r\n  \"phone\": \"string\",\r\n  \"address\": \"string\",\r\n  \"specializationId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Doctors",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Doctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Doctor By ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Doctor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"dateOfBirth\": \"2025-11-09T23:16:50.049Z\",\r\n  \"gender\": 0,\r\n  \"email\": \"user@example.com\",\r\n  \"phone\": \"string\",\r\n  \"address\": \"string\",\r\n  \"specializationId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Doctors/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Doctors",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Doctor",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Doctors/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Doctors",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "Get Patients",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Patients",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Patients"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"dateOfBirth\": \"2025-11-09T23:26:07.108Z\",\r\n  \"gender\": 0,\r\n  \"email\": \"user@example.com\",\r\n  \"phone\": \"string\",\r\n  \"address\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Patients",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Patients"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Patient By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "URL: http://clinicappapi.runasp.net/api/Patients/{id}",
+							"protocol": "URL: http",
+							"host": [
+								"clinicappapi",
+								"runasp",
+								"net"
+							],
+							"path": [
+								"api",
+								"Patients",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Patient",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"dateOfBirth\": \"2025-11-09T23:31:45.725Z\",\r\n  \"gender\": 0,\r\n  \"email\": \"user@example.com\",\r\n  \"phone\": \"string\",\r\n  \"address\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "URL: http://clinicappapi.runasp.net/api/Patients/{id}",
+							"protocol": "URL: http",
+							"host": [
+								"clinicappapi",
+								"runasp",
+								"net"
+							],
+							"path": [
+								"api",
+								"Patients",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Patient",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Patients/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Patients",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "Appointment Status Actions",
+					"item": [
+						{
+							"name": "Confirm",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "<token>",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\"2025-11-10T11:33:26.639Z\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/Appointments/{id}/Confirm",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"Appointments",
+										"{id}",
+										"Confirm"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Complete",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "<token>",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/Appointments/{id}/Complete",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"Appointments",
+										"{id}",
+										"Complete"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "NoShow",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "<token>",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/Appointments/{id}/NoShow",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"Appointments",
+										"{id}",
+										"NoShow"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reschedule",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "<token>",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\"2025-11-10T11:38:18.945Z\"",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/Appointments/{id}/Reschedule",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"Appointments",
+										"{id}",
+										"Reschedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Cancel",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "<token>",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/Appointments/{id}/Cancel",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"Appointments",
+										"{id}",
+										"Cancel"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Appointments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Appointments",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Appointment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"patientId\": 0,\r\n  \"doctorId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Appointments",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Appointment By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Appointments/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Appointments",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Appointment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"patientId\": 0,\r\n  \"doctorId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Appointments/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Appointments",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Appointment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Appointments/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Appointments",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Doctor Appointments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Appointments/doctor/{doctorId}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Appointments",
+								"doctor",
+								"{doctorId}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Patient Appointments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Appointments/patient/{patientId}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Appointments",
+								"patient",
+								"{patientId}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medications",
+			"item": [
+				{
+					"name": "Get Medications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Medications",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Medications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Medication",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Medications",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Medications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Medication By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Medications/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Medications",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Medication",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Medications/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Medications",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Medication",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Medications/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Medications",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment Methods",
+			"item": [
+				{
+					"name": "Get Payment Methods",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/PaymentMethods",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"PaymentMethods"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Payment Method",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/PaymentMethods",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"PaymentMethods"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment Method By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/PaymentMethods/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"PaymentMethods",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Payment Method",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/PaymentMethods/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"PaymentMethods",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Payment Method",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/PaymentMethods/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"PaymentMethods",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Get Payments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Payments",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 0,\r\n  \"appointmentId\": 0,\r\n  \"paymentMethodId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Payments",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Payments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment By ID",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Payments/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Payments",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Payment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"amount\": 0,\r\n  \"paymentMethodId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Payments/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Payments",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirm Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Payments/{id}/Confirm",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Payments",
+								"{id}",
+								"Confirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Payment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Payments/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Payments",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Persons",
+			"item": [
+				{
+					"name": "Get Persons",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Persons",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Person",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"dateOfBirth\": \"2025-11-10T14:28:01.139Z\",\r\n  \"gender\": 0,\r\n  \"email\": \"user@example.com\",\r\n  \"phone\": \"string\",\r\n  \"address\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Persons",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Persons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Person By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Persons/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Persons",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Person",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"string\",\r\n  \"lastName\": \"string\",\r\n  \"dateOfBirth\": \"2025-11-10T14:29:57.350Z\",\r\n  \"gender\": 0,\r\n  \"email\": \"user@example.com\",\r\n  \"phone\": \"string\",\r\n  \"address\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Persons/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Persons",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Person",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Persons/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Persons",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Prescriptions",
+			"item": [
+				{
+					"name": "Get Prescriptions",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Prescriptions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Prescriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Prescription",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"instructions\": \"string\",\r\n  \"patientId\": 0,\r\n  \"doctorId\": 0,\r\n  \"record\": {\r\n    \"diagnosis\": \"string\",\r\n    \"description\": \"string\"\r\n  },\r\n  \"medications\": [\r\n    {\r\n      \"dosage\": \"string\",\r\n      \"frequency\": \"string\",\r\n      \"startDate\": \"2025-11-10T14:36:39.976Z\",\r\n      \"endDate\": \"2025-11-10T14:36:39.976Z\",\r\n      \"medicationId\": 0\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Prescriptions",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Prescriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Prescription By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Prescriptions/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Prescriptions",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Prescription",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"instructions\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Prescriptions/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Prescriptions",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Prescription",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Prescriptions/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Prescriptions",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PrescriptionMedications",
+			"item": [
+				{
+					"name": "Get PrescriptionMedications",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/PrescriptionMedications",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"PrescriptionMedications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create PrescriptionMedication",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dosage\": \"string\",\r\n  \"frequency\": \"string\",\r\n  \"startDate\": \"2025-11-10T17:45:27.330Z\",\r\n  \"endDate\": \"2025-11-10T17:45:27.330Z\",\r\n  \"medicationId\": 0,\r\n  \"prescriptionId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/PrescriptionMedications",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"PrescriptionMedications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PrescriptionMedication By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/PrescriptionMedications/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"PrescriptionMedications",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update PrescriptionMedication",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"dosage\": \"string\",\r\n  \"frequency\": \"string\",\r\n  \"startDate\": \"2025-11-10T17:47:34.819Z\",\r\n  \"endDate\": \"2025-11-10T17:47:34.819Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/PrescriptionMedications/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"PrescriptionMedications",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete PrescriptionMedication",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/PrescriptionMedications/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"PrescriptionMedications",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Records",
+			"item": [
+				{
+					"name": "Get Records",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Records",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Records"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Record",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"diagnosis\": \"string\",\r\n  \"description\": \"string\",\r\n  \"patientId\": 0,\r\n  \"doctorId\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Records",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Records"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Record By ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Records/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Records",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Record",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"diagnosis\": \"string\",\r\n  \"description\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Records/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Records",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Record",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Records/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Records",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Add New Role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Roles/AddRole",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Roles",
+								"AddRole"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Roles to User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": \"string\",\r\n  \"roles\": [\r\n    0\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Roles/SetUserRoles",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Roles",
+								"SetUserRoles"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Specializations",
+			"item": [
+				{
+					"name": "Get Specializations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/Specializations",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Specializations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Specialization",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Specializations",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Specializations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Specialization By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/Specializations/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Specializations",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Specialization",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"string\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/Specializations/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Specializations",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Specialization",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "<token>",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/Specializations/{id}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"Specializations",
+								"{id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
