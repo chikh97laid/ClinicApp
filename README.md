@@ -39,6 +39,9 @@ A comprehensive clinic management RESTful API built with **ASP.NET Core 8** and 
 
 ---
 
+## Test the API:
+- http://clinicappapi.runasp.net/swagger/index.html
+
 ## How to Run Locally
 
 Follow these steps to set up and run the project on your local machine:
