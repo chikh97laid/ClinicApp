@@ -1,3 +1,20 @@
+# Problem 
+Managing clinic operations often leads to inconsistent data, unauthorized access to sensitive information, and complex transactional workflows (appointments, prescriptions, billing).
+
+This project was built to explore how to design a secure, scalable backend API that enforces role-based access, maintains data integrity across multiple related entities, and supports real-world clinic workflows.
+
+# Why this architecture
+- Used Role-Based Authorization to ensure doctors and patients only access their own data.
+- Implemented Transactions to guarantee consistency when creating prescriptions and related records.
+- Applied Unit of Work to manage complex operations across multiple repositories safely.
+- Used Fluent Validation to centralize and enforce business rules outside controllers.
+
+# What I learned
+- Designing APIs beyond CRUD.
+- Handling real-world authorization scenarios.
+- Managing relational data consistency.
+- Structuring backend projects for maintainability.
+
 # Clinic Management System - ASP.NET Core 8
 
 A comprehensive clinic management RESTful API built with **ASP.NET Core 8** and **Entity Framework Core**, providing full CRUD operations for patients, doctors, appointments, bills, medications, and prescriptions, with role-based authorization and clean RESTful design.
