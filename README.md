@@ -11,10 +11,10 @@ This project was built to explore how to design a secure, scalable backend API t
 The system follows a layered architecture with clear separation of concerns.
 
 <p align="center">
-  <img src="dgimg.png" width="500" />
+  <img src="archetect.png" width="500" />
 </p>
 
-🔍 [View full architecture diagram](dgimg.png)
+🔍 [View full architecture diagram](archetect.png)
 
 ## Why this architecture
 - Used Role-Based Authorization to ensure doctors and patients only access their own data.
