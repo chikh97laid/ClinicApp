@@ -1,7 +1,6 @@
 # Clinic Management System - ASP.NET Core 8
-
 A comprehensive clinic management RESTful API built with **ASP.NET Core 8** and **Entity Framework Core**, providing full CRUD operations for patients, doctors, appointments, bills, medications, and prescriptions, with role-based authorization and clean RESTful design.
----
+
 # Problem 
 Managing clinic operations often leads to inconsistent data, unauthorized access to sensitive information, and complex transactional workflows (appointments, prescriptions, billing).
 
