@@ -14,8 +14,6 @@ The system follows a layered architecture with clear separation of concerns.
   <img src="dgimg.png" width="500" />
 </p>
 
-🔍 [View full architecture diagram](dgimg.png)
-
 ## Why this architecture
 - Used Role-Based Authorization to ensure doctors and patients only access their own data.
 - Implemented Transactions to guarantee consistency when creating prescriptions and related records.
