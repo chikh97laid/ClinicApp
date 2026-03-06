@@ -14,9 +14,6 @@ The system follows a layered architecture with clear separation of concerns.
   <img src="dgimg.png" width="500" />
 </p>
 
-## Database Schema
-
-![Database Schema](database-schema.png)
 
 ## Why this architecture
 - Used Role-Based Authorization to ensure doctors and patients only access their own data.
@@ -29,6 +26,12 @@ The system follows a layered architecture with clear separation of concerns.
 - Handling real-world authorization scenarios.
 - Managing relational data consistency.
 - Structuring backend projects for maintainability.
+
+---
+
+## Database Schema
+
+![Database Schema](database-schema.png)
 
 ---
 
