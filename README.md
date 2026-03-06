@@ -66,6 +66,9 @@ The system follows a layered architecture with clear separation of concerns.
 ## Test the API:
 - http://clinicappapi.runasp.net/swagger/index.html
 
+## Database Schema
+
+![Database Schema](database-schema.png)
 
 ## How to Run Locally
 
