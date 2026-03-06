@@ -14,6 +14,10 @@ The system follows a layered architecture with clear separation of concerns.
   <img src="dgimg.png" width="500" />
 </p>
 
+## Database Schema
+
+![Database Schema](database-schema.png)
+
 ## Why this architecture
 - Used Role-Based Authorization to ensure doctors and patients only access their own data.
 - Implemented Transactions to guarantee consistency when creating prescriptions and related records.
@@ -66,9 +70,6 @@ The system follows a layered architecture with clear separation of concerns.
 ## Test the API:
 - http://clinicappapi.runasp.net/swagger/index.html
 
-## Database Schema
-
-![Database Schema](database-schema.png)
 
 ## How to Run Locally
 
